@@ -10,6 +10,7 @@ void main() => runApp(MaterialApp(
         body: Column(
           children: <Widget>[
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Flexible(
                   child: Text(
@@ -28,6 +29,7 @@ void main() => runApp(MaterialApp(
               ],
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Flexible(
                   child: Text(
@@ -46,6 +48,7 @@ void main() => runApp(MaterialApp(
               ],
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Flexible(
                   child: RaisedButton(
@@ -65,6 +68,7 @@ void main() => runApp(MaterialApp(
               ],
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 new Flexible(
                   child: RaisedButton(
@@ -81,25 +85,6 @@ void main() => runApp(MaterialApp(
             )
           ],
         ))));
-
-class ScoreInput extends StatefulWidget {
-  @override
-  _ScoreInputState createState() => _ScoreInputState();
-}
-
-class _ScoreInputState extends State<ScoreInput> {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-        child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-      const SizedBox(height: 60),
-      RaisedButton(
-        onPressed: () {},
-        child: const Text("Conventional Grade", style: TextStyle(fontSize: 20)),
-      ),
-    ]));
-  }
-}
 
 String calculateConventionalGrade(int score, int outOf) {
   double value = (score / outOf) * 100;
