@@ -1,35 +1,86 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-void main() => runApp(MyApp());
-
-class Calculator extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Grade Calculator',
-      theme: ThemeData(primarySwatch: Colors.blue),
-    );
-  }
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Just calculate",
-      home: Scaffold(
+void main() => runApp(MaterialApp(
+    home: Scaffold(
         appBar: AppBar(
           title: Text("Grade Calculator"),
+          centerTitle: true,
         ),
-        body: Center(
-          child: Text("This app is more broken than the debate"),
-        ),
-      ),
-    );
-  }
-}
+        body: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                new Flexible(
+                  child: Text(
+                    "Score:",
+                    style: new TextStyle(fontSize: 30.0),
+                  ),
+                ),
+                new Flexible(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Input points earned',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                new Flexible(
+                  child: Text(
+                    "Out of:",
+                    style: new TextStyle(fontSize: 30.0),
+                  ),
+                ),
+                new Flexible(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Input points possible',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                new Flexible(
+                  child: RaisedButton(
+                    child: Text(
+                      "Calculate Conventional Grade",
+                      style: new TextStyle(fontSize: 30.0),
+                    ),
+                    textColor: Colors.white,
+                    color: Colors.green,
+                    onPressed: () {
+                      return AlertDialog(
+                        content: Text("Help"),
+                      );
+                    },
+                  ),
+                )
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                new Flexible(
+                  child: RaisedButton(
+                    child: Text(
+                      "Calculate Triage Grade",
+                      style: new TextStyle(fontSize: 30.0),
+                    ),
+                    textColor: Colors.white,
+                    color: Colors.green,
+                    onPressed: () {},
+                  ),
+                )
+              ],
+            )
+          ],
+        ))));
 
 class ScoreInput extends StatefulWidget {
   @override
@@ -38,7 +89,16 @@ class ScoreInput extends StatefulWidget {
 
 class _ScoreInputState extends State<ScoreInput> {
   @override
-  Widget build(BuildContext context) {}
+  Widget build(BuildContext context) {
+    return Center(
+        child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+      const SizedBox(height: 60),
+      RaisedButton(
+        onPressed: () {},
+        child: const Text("Conventional Grade", style: TextStyle(fontSize: 20)),
+      ),
+    ]));
+  }
 }
 
 String calculateConventionalGrade(int score, int outOf) {
