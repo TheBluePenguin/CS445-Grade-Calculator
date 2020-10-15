@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 void main() => runApp(MaterialApp(
     home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(0xff007DB8),
           title: Text("Grade Calculator"),
           centerTitle: true,
         ),
@@ -57,7 +58,7 @@ void main() => runApp(MaterialApp(
                       style: new TextStyle(fontSize: 30.0),
                     ),
                     textColor: Colors.white,
-                    color: Colors.green,
+                    color: Color(0xff3A8340),
                     onPressed: () {
                       return AlertDialog(
                         content: Text("Help"),
@@ -66,6 +67,9 @@ void main() => runApp(MaterialApp(
                   ),
                 )
               ],
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -77,7 +81,7 @@ void main() => runApp(MaterialApp(
                       style: new TextStyle(fontSize: 30.0),
                     ),
                     textColor: Colors.white,
-                    color: Colors.green,
+                    color: Color(0xff3A8340),
                     onPressed: () {},
                   ),
                 )
